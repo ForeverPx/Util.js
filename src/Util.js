@@ -120,7 +120,11 @@ Util = {};
      */
     util.biggerThan = function(doubleNum1, doubleNum2, opt_precision) {
         opt_precision = opt_precision || 2;
-        return parseInt(parseFloat(doubleNum1) * Math.pow(10, opt_precision)) > parseInt(parseFloat(doubleNum2) * Math.pow(10, opt_precision));
+        if(opt_precision == doubleNum1.toString().split(".")[1].length){
+            return parseInt(parseFloat(doubleNum1) * Math.pow(10, opt_precision)) > parseInt(parseFloat(doubleNum2) * Math.pow(10, opt_precision));
+        }else{
+            return Math.round(parseFloat(doubleNum1) * Math.pow(10, opt_precision)) > parseInt(parseFloat(doubleNum2) * Math.pow(10, opt_precision));
+        }
     };
 
     /**
