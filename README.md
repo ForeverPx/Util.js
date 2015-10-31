@@ -7,24 +7,24 @@ javascript常用工具函数集合
 
 # Examples
 
-## Util.formatDate
+## formatDate
 ```js
     var date = new Date();
     Util.formatDate(date,'YYYY/MM/DD hh:mm:ss'); // 2014/11/12 11:12:13
 ```
 
-## Util.downLoadAttachFileByUrl
+## downLoadAttachFileByUrl
 ```js
     Util.downLoadAttachFileByUrl('http://localhost:8080/download?id=123');
 ```
 
-## Util.biggerThan
+## biggerThan
 ```js
     //默认精度为2，第三个参数为精度
     Util.biggerThan(1.32,1.31); // true
 ```
 
-## Util.createHtml
+## createHtml
 ```html
     <script id="item" type="text/x-handlebars-template">
     	<dd type="{{type}}">
