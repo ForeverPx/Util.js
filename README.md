@@ -111,3 +111,78 @@ javascript常用工具函数集合
     Util.subString("abc你好abc",'5'，true); // abc你...    
 ```
 
+## getCookie
+根据key获取cookie的value
+```js
+    Util.getCookie('name');
+```
+
+## comAjaxCallBack
+通用ajax返回处理，可针对statusCode做默认处理，也可定制化处理
+```js
+    Util.Ack = {
+        200:'成功',
+        400:function(data){
+            //do something with data
+        },
+        500:'失败'
+    };
+    
+    //返回的data中需要有statusCode
+    $.post('',{},function(data){
+        util.comAjaxCallBack(data,{
+            //如果此处不配置200，则会alert出ACK中200对应的'成功'
+            200:function(){
+                //dosometing
+            },
+            //如果此处不配置400，则会执行ACK中400对应的function
+            400:function(){
+            
+            }
+        })
+    });
+```
+
+## getUrlParam
+根据key获取url中的参数
+```js
+    // http://www.a.com?username=123&age=234
+    Util.getUrlParam('username'); //123
+```
+
+## createUUID
+生成UUID
+```js
+    Util.createUUID();
+```
+
+## formatFileSize
+格式化文件大小
+```js
+    //文件a的大小为1024B
+    Util.formatFileSize(1024); // 1KB
+```
+
+## getScript
+动态创建script或者link标签
+```js
+    Util.getScript("http://aa.js",function(){
+    alert('success')},'UTF-8','script')
+```
+
+## isPlainObject
+用于判断指定参数是否是一个纯粹的对象
+```js
+    Util.isPlainObject({});  //true
+    Util.isPlainObject([]);  //false
+```
+
+## isInteger
+判断是否为整数
+```js
+    Util.isInteger(1.1); //false
+    Util.isInteger(2); //true
+```
+
+
+

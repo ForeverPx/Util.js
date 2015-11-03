@@ -488,7 +488,7 @@ Util = {};
             size = size * 10;
             string = "b";
         }
-        return "<strong>" + (Math.round(size) / 10) + "</strong> " + string;
+        return (Math.round(size) / 10) + string;
     };
 
     /**
